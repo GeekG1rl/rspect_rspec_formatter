@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'rspect_backtrace'
+require 'rspect_rspec_formatter'
 puts RspectBacktrace.add_to_config
