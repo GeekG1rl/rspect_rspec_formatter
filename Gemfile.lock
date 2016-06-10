@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rspect_rspec_formatter (0.0.5)
+    rspect_rspec_formatter (0.0.6)
       EmojifyRspecFormatter
 
 GEM
