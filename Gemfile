@@ -4,3 +4,4 @@ gemspec
 gem 'rspec'
 gem 'byebug'
 gem 'cocaine'
+gem 'EmojifyRspecFormatter'
