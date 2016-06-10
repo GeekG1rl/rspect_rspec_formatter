@@ -21,6 +21,7 @@ GEM
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.9.0)
+    rake (11.1.2)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -42,8 +43,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   byebug
   cocaine
+  rake
   rspec
   rspect_rspec_formatter!
 

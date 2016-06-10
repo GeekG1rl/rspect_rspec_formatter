@@ -7,7 +7,10 @@ Gem::Specification.new do |s|
   s.authors     = ["Emmett Walsh", "Macey Baker", "Mara Wanot", "Harry Williams"]
   s.email       = 'harrywynnwilliams@googlemail.com'
   s.files       = ["lib/rspect_backtrace.rb"]
-  s.homepage    =
-    'http://rubygems.org/gems/hola'
-  s.license       = 'MIT'
+  s.homepage    = "https://github.com/harrywynnwill/rspect_rspec_formatter.git"
+  s.license     = 'MIT'
+
+
+  s.add_development_dependency "bundler"
+  s.add_development_dependency "rake"
 end
