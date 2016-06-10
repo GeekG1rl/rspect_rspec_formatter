@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'rspect_backtrace'
+puts RspectBacktrace.add_to_config
