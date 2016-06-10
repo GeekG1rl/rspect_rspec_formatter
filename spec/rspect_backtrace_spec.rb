@@ -7,9 +7,11 @@ describe RspectBacktrace do
 
 
   before :all do
+
      Bundler.with_clean_env do
        @config_text = "config.backtrace_exclusion_patterns = [/gems/]"
-      @rspec_result_noformat = `cd spec/rspec_tests && bundle exec rspec some_tests.rb`
+      @rspec_result = `cd spec/rspec_tests && bundle exec rspec some_tests.rb`
+      @rspec_result_format = `cd spec/rspec_tests ruby -Ilib && ./bin/rspect_rspec_formatter && bundle exec rspec some_tests.rb`
     end
   end
   after(:each) do
@@ -18,19 +20,18 @@ describe RspectBacktrace do
 
   it 'adds the custom configuration to the config file' do
     expect(File.read('config.rb')).not_to include @config_text
-    `ruby -Ilib ./bin/rspect_backtrace`
+    `ruby -Ilib ./bin/rspect_rspec_formatter`
     expect(File.read('config.rb')).to include @config_text
 
   end
 
-  # it 'removes gems from the stack trace' do
-  #   `ruby -Ilib ./bin/rspect_backtrace`
-  #   expect(@rspec_result).not_to include("/gem")
-  # end
-  #
-  # it 'keeps gems in the stack trace' do
-  #   expect(@rspec_result).to include("/gem")
-  # end
+  it 'removes gems from the stack trace' do
+    expect(@rspec_result_format).not_to include("/gem")
+  end
+
+  it 'keeps gems in the stack trace' do
+    expect(@rspec_result).to include("/gem")
+  end
 end
 
 

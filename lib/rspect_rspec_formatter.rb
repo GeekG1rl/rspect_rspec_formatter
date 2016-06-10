@@ -4,10 +4,12 @@ require 'fileutils'
 class RspectBacktrace
 
   def self.add_to_config
+
     file_name = 'config.rb'
+
     temp_file = Tempfile.new(file_name)
     line_to_find = "RSpec.configure do |config|"
-    text = File.read(file_name)
+    # text = File.read(file_name)
     line_to_add = "config.backtrace_exclusion_patterns = [/gems/]"
     begin
       File.readlines(file_name).each do |line|
